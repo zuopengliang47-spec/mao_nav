@@ -9,15 +9,6 @@ const router = createRouter({
       name: 'home',
       component: NavHomeView,
     },
-    {
-      path: '/admin',
-      name: 'admin',
-      component: () => import('../views/AdminView.vue'),
-      meta: {
-        title: '管理 - 导航站',
-        requiresAuth: true
-      }
-    },
   ],
 })
 

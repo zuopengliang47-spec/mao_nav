@@ -25,7 +25,6 @@ export default defineConfig({
       output: {
         manualChunks: {
           'vue-vendor': ['vue', 'vue-router'],
-          'admin': ['./src/views/AdminView.vue']
         }
       }
     }
