@@ -50,13 +50,6 @@ export const mockData = {
       "order": 2,
       "sites": [
         {
-          "id": "ent-douyu",
-          "name": "斗鱼直播",
-          "url": "https://www.douyu.com/directory/myFollow",
-          "description": "游戏直播平台",
-          "icon": "/sitelogo/www.douyu.com.ico"
-        },
-        {
           "id": "ent-qq-video",
           "name": "腾讯视频",
           "url": "https://v.qq.com/",
@@ -69,13 +62,6 @@ export const mockData = {
           "url": "https://www.douyin.com/",
           "description": "短视频平台",
           "icon": "/sitelogo/www.douyin.com.ico"
-        },
-        {
-          "id": "ent-youtube",
-          "name": "YouTube",
-          "url": "https://www.youtube.com/",
-          "description": "全球视频平台",
-          "icon": "/sitelogo/www.youtube.com.ico"
         },
         {
           "id": "ent-flingtrainer",
