@@ -50,13 +50,6 @@ export const mockData = {
       "order": 2,
       "sites": [
         {
-          "id": "ent-bilibili",
-          "name": "哔哩哔哩",
-          "url": "https://www.bilibili.com/",
-          "description": "弹幕视频网站",
-          "icon": "/sitelogo/www.bilibili.com.ico"
-        },
-        {
           "id": "ent-douyu",
           "name": "斗鱼直播",
           "url": "https://www.douyu.com/directory/myFollow",
