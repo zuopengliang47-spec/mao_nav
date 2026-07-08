@@ -34,12 +34,6 @@
           <span>首页</span>
         </a>
         <nav class="topbar-nav">
-          <a
-            v-for="cat in categories"
-            :key="cat.id"
-            :href="`#${cat.id}`"
-            class="nav-link"
-          >{{ cat.name }}</a>
           <button class="theme-btn" @click="themeStore.toggleTheme" :title="themeStore.isDarkMode ? '切换亮色' : '切换暗色'">
             <svg v-if="themeStore.isDarkMode" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
             <svg v-else xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
@@ -86,37 +80,26 @@
           <button @click="fetchCategories" class="retry-btn">重试</button>
         </div>
 
-        <!-- 分类 + 网站卡片 -->
-        <div v-else class="sections">
-          <section
-            v-for="cat in categories"
-            :key="cat.id"
-            :id="cat.id"
-            class="section"
-          >
-            <h2 class="section-title">
-              <span class="section-icon">{{ cat.icon }}</span>
-              {{ cat.name }}
-            </h2>
-            <div class="card-grid">
-              <a
-                v-for="site in cat.sites"
-                :key="site.id"
-                :href="site.url"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="card card-glow"
-              >
-                <div class="card-icon">
-                  <img :src="site.icon" :alt="site.name" @error="handleImageError" />
-                </div>
-                <div class="card-body">
-                  <h3 class="card-name">{{ site.name }}</h3>
-                  <p class="card-desc">{{ site.description }}</p>
-                </div>
-              </a>
-            </div>
-          </section>
+        <!-- 所有网站平铺 -->
+        <div v-else class="card-grid">
+          <template v-for="cat in categories" :key="cat.id">
+            <a
+              v-for="site in cat.sites"
+              :key="site.id"
+              :href="site.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="card card-glow"
+            >
+              <div class="card-icon">
+                <img :src="site.icon" :alt="site.name" @error="handleImageError" />
+              </div>
+              <div class="card-body">
+                <h3 class="card-name">{{ site.name }}</h3>
+                <p class="card-desc">{{ site.description }}</p>
+              </div>
+            </a>
+          </template>
         </div>
 
         <!-- 底部 -->
