@@ -92,7 +92,7 @@
               class="card card-glow"
             >
               <div class="card-icon">
-                <img :src="site.icon" :alt="site.name" @error="handleImageError" />
+                <img :src="getFavicon(site.url)" :alt="site.name" @error="handleImageError" />
               </div>
               <div class="card-body">
                 <h3 class="card-name">{{ site.name }}</h3>
@@ -172,8 +172,17 @@ const handleUnlock = async () => {
 }
 
 const handleImageError = (e) => {
-  e.target.src = '/favicon.ico'
+  e.target.style.display = 'none'
   e.target.onerror = null
+}
+
+const getFavicon = (url) => {
+  try {
+    const host = new URL(url).hostname
+    return `https://www.google.com/s2/favicons?domain=${host}&sz=32`
+  } catch {
+    return '/favicon.ico'
+  }
 }
 
 onMounted(async () => {
