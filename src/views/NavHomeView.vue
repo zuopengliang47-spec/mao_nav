@@ -92,7 +92,7 @@
               class="card card-glow"
             >
               <div class="card-icon">
-                <img :src="getFavicon(site.url)" :alt="site.name" @error="handleImageError" />
+                <img :src="site.icon" :alt="site.name" @error="handleImageError" />
               </div>
               <div class="card-body">
                 <h3 class="card-name">{{ site.name }}</h3>
